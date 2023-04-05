@@ -17,7 +17,7 @@ class Passenger
   end
 
   def drive
-    return @driver = true if @age >= 16
+    return @driver = true if @age >= 18
     "Sorry, you're not old enought to drive!"
   end
 
