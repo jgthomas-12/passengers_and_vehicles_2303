@@ -13,7 +13,7 @@ RSpec.describe Passenger do
   describe "initialize" do 
     
     it "exists" do 
-      expect(@charlie).to be_an_instance_of(Passenger)
+      expect(@charlie).to be_a(Passenger)
       expect(@taylor).to be_a(Passenger)
     end
 
