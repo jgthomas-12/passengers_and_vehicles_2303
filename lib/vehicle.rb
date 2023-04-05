@@ -23,6 +23,14 @@ class Vehicle
   def speeding?
     return true if @speeding == true
     false
+  end
 
+  def add_passenger(passenger)
+    @passengers << passenger
+    @passengers
+  end
+
+  def num_adults
+    @passengers.count
   end
 end
