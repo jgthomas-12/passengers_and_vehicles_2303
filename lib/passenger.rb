@@ -4,7 +4,6 @@ class Passenger
               :driver
                 
   def initialize(details)
-    # require 'pry'; binding.pry
     @name = details["name"]
     @age = details["age"]
     @driver = false
@@ -14,9 +13,17 @@ class Passenger
   def adult?
     return true if @age >= 18
     false
-    
+
   end
 
+  def drive
+    return @driver = true if @age >= 16
+    "Sorry, you're not old enought to drive!"
+  end
+
+  def driver?
+    @driver
+  end
 
 
 
