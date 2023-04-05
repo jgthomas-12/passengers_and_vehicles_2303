@@ -1,7 +1,7 @@
 require 'rspec'
 require './lib/passenger'
 
-RSpec.descibe Passenger do
+RSpec.describe Passenger do
 
   before(:each) do 
 
@@ -15,48 +15,52 @@ RSpec.descibe Passenger do
   describe "initialize" do 
     
     it "exists" do 
+
       expect(@charlie).to be_an_instance_of(Passenger)
-      expect(@taylor.to be_a(Passenger))
+      expect(@taylor).to be_a(Passenger)
+
     end
 
     it "has readable attributes" do 
 
       expect(@charlie.name).to eq("Charlie")
-      # => "Charlie"
       
       expect(@charlie.age).to eq(18)
-      # => 18
+
       expect(@charlie.driver).to be(false)
     end
   end
     
   describe "additional methods" do 
 
-    it "can check if person is an adult" do 
+    it "#adult?" do 
       
       expect(@charlie.adult?).to be(true)
-      # => true
       
       expect(@taylor.adult?).to be(false)
-      # => false
-    end
-  
-    it "can make someone a driver if they're old enough" do 
 
-      expect(charlie.driver?).to be(false)
-      # => false
+    end
+
+    it "#driver?" do 
+
       
-      charlie.drive
+      expect(@charlie.driver?).to be(false)
       
-      expect(charlie.driver?).to be(true)
-      # => true
+      expect(@taylor.driver?).to be(false)
+
+    end
+
+
+    it "#drive" do 
+
+      expect(@charlie.driver?).to be(false)
+      
+      @charlie.drive
+      
+      expect(@charlie.driver?).to be(true)
+
+      expect(@taylor.drive).to eq("Sorry, you're not old enought to drive!")
       
     end
   end
-
-
-
-
-
-
 end
